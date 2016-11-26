@@ -3,11 +3,15 @@ public class PalindromeChecker {
         if (word == null || word.trim().length() == 0) {
             return false;
         }
-        StringBuilder SBword = new StringBuilder(word);
-        StringBuilder reversedSBword = SBword.reverse();
-        String odwroconyWord = reversedSBword.toString();
-        // String odwroconyWord = new StringBuilder(word).reverse().toString();
-//        System.out.println(odwroconyWord);
-        return word.toLowerCase().equals(odwroconyWord.toLowerCase()); //to zwroci true jesli jest prawda
+        String reversedWord = reverseWord(word);
+        String ignoreCaseWord = word.toLowerCase();
+        String ignoreCaseReversedWord = reversedWord.toLowerCase();
+        return ignoreCaseWord.equals(ignoreCaseReversedWord);
+    }
+
+    private String reverseWord(String word) {
+        StringBuilder stringBuilderWord = new StringBuilder(word);
+        StringBuilder reversedSBword = stringBuilderWord.reverse();
+        return reversedSBword.toString();
     }
 }
