@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class PalindromeCheckerTest {
     @Test
-    public void Palindrome() {
+    public void shouldRecognizeProperPalindrome() {
         //given
         PalindromeChecker p = new PalindromeChecker(); //towrze instancje
         boolean expected = true;
@@ -17,39 +17,38 @@ public class PalindromeCheckerTest {
     }
 
     @Test
-    public void NonPalindrome() {
+    public void shouldRecognizeNonPalindrome() {
         PalindromeChecker p = new PalindromeChecker();
-        boolean expected = false;
 
         boolean wynik = p.isPalindrome("bieganie");
-        assertThat(wynik).isEqualTo(expected);
 
+        assertThat(wynik).isFalse();
     }
 
     @Test
-    public void CaseInsensitive() {
+    public void shouldRecognizePalindromeBeingCaseInsensitive() {
         PalindromeChecker p = new PalindromeChecker();
-        boolean expected = true;
 
         boolean wynik = p.isPalindrome("KAjak");
-        assertThat(wynik).isEqualTo(expected);
+
+        assertThat(wynik).isTrue();
     }
 
     @Test
-    public void emptyString() {
+    public void emptyStringIsNotPalindrome() {
         PalindromeChecker p = new PalindromeChecker();
-        boolean expected = false;
 
         boolean wynik = p.isPalindrome(null);
-        assertThat(wynik).isEqualTo(expected);
+
+        assertThat(wynik).isFalse();
     }
 
     @Test
-    public void OnlyWhiteCharacters() {
+    public void whiteCharactersAreNeverPalindrome() {
         PalindromeChecker p = new PalindromeChecker();
-        boolean expected = false;
 
         boolean wynik = p.isPalindrome("     ");
-        assertThat(wynik).isEqualTo(expected);
+
+        assertThat(wynik).isFalse();
     }
 }

@@ -5,8 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RectangleTest {
     @Test
-    public void CorrectField() {
-
+    public void correctField() {
         //given
         Rectangle r = new Rectangle(2, 5);
         int expectedField = 10;
@@ -19,7 +18,7 @@ public class RectangleTest {
     }
 
     @Test
-    public void CorrectPerimeter() {
+    public void correctPerimeter() {
         Rectangle r = new Rectangle(2, 5);
         int expectedPerimeter = 14;
 
