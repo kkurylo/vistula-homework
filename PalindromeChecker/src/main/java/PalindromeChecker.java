@@ -1,6 +1,6 @@
 public class PalindromeChecker {
     public boolean isPalindrome(String word) {
-        if (word == null || word.trim().length() == 0) {
+        if (word == null || word.trim().length() == 0) { //word.trim().empty()
             return false;
         }
         String reversedWord = reverseWord(word);

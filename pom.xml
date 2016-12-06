@@ -6,11 +6,13 @@
 
     <groupId>org.vistula.homework.day1</groupId>
     <artifactId>vistula</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
         <module>PalindromeChecker</module>
         <module>Rectangle</module>
+        <module>Triangle</module>
     </modules>
 
     <dependencies>
