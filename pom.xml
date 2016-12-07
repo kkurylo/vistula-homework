@@ -13,6 +13,7 @@
         <module>PalindromeChecker</module>
         <module>Rectangle</module>
         <module>Triangle</module>
+        <module>PercentGrader</module>
     </modules>
 
     <dependencies>
