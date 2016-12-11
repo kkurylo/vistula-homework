@@ -15,6 +15,7 @@
         <module>Triangle</module>
         <module>PercentGrader</module>
         <module>ExerciseP</module>
+        <module>FibonacciSeries</module>
     </modules>
 
     <dependencies>
