@@ -1,3 +1,5 @@
+package pl.kdkurylo;
+
 import org.junit.Test;
 
 import java.util.ArrayList;

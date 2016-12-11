@@ -1,3 +1,5 @@
+package pl.kdkurylo;
+
 import static java.lang.Math.sqrt;
 
 public class Triangle {

@@ -1,3 +1,5 @@
+package pl.kdkurylo;
+
 public class PercentGrader {
 
     public int calculate(float p) {

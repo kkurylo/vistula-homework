@@ -1,3 +1,5 @@
+package pl.kdkurylo;
+
 public class Person {
 
     private int age;

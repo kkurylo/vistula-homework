@@ -1,3 +1,5 @@
+package pl.kdkurylo;
+
 import java.util.List;
 
 public interface PersonDiviserInterface {

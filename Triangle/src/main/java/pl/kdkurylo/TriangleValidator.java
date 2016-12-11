@@ -1,3 +1,5 @@
+package pl.kdkurylo;
+
 public class TriangleValidator {
 
     public boolean validate(int a, int b, int c) {

@@ -1,3 +1,5 @@
+package pl.kdkurylo;
+
 import java.util.ArrayList;
 import java.util.List;
 
