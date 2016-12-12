@@ -16,6 +16,7 @@
         <module>PercentGrader</module>
         <module>ExerciseP</module>
         <module>FibonacciSeries</module>
+        <module>MultiplicationTable</module>
     </modules>
 
     <dependencies>
