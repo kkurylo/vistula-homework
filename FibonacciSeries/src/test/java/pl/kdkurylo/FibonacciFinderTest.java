@@ -5,11 +5,10 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class FibonacciFinderTest {
+    private FibonacciFinder ff = new FibonacciFinder();
 
     @Test
     public void shouldReturn1ForFirstFibonacciSequenceNumber() {
-        FibonacciFinder ff = new FibonacciFinder();
-
         long result = ff.getFibonacciNumber(1);
 
         assertThat(result).isEqualTo(1);
@@ -17,8 +16,6 @@ public class FibonacciFinderTest {
 
     @Test
     public void shouldReturn1ForSecondFibonacciSequenceNumber() {
-        FibonacciFinder ff = new FibonacciFinder();
-
         long result = ff.getFibonacciNumber(2);
 
         assertThat(result).isEqualTo(1);
@@ -26,8 +23,6 @@ public class FibonacciFinderTest {
 
     @Test
     public void shouldReturn2ForThirdFibonacciSequenceNumber() {
-        FibonacciFinder ff = new FibonacciFinder();
-
         long result = ff.getFibonacciNumber(3);
 
         assertThat(result).isEqualTo(2);
@@ -35,8 +30,6 @@ public class FibonacciFinderTest {
 
     @Test
     public void shouldReturn55ForTenthFibonacciSeriesNumber() {
-        FibonacciFinder ff = new FibonacciFinder();
-
         long result = ff.getFibonacciNumber(10);
 
         assertThat(result).isEqualTo(55);
@@ -44,9 +37,6 @@ public class FibonacciFinderTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldReturnExpectionIfInputIsNegativeNumber() {
-        FibonacciFinder ff = new FibonacciFinder();
-
         long result = ff.getFibonacciNumber(-10);
     }
-
 }
