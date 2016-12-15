@@ -15,9 +15,11 @@ public class PersonDiviserTest {
         Person p1 = new Person(0);
         Person p2 = new Person(10);
         Person p3 = new Person(17);
+        Person p4 = new Person(20);
         people.add(p1);
         people.add(p2);
         people.add(p3);
+        people.add(p4);
 
         PersonDiviser pd = new PersonDiviser(people);
 
@@ -34,14 +36,18 @@ public class PersonDiviserTest {
     @Test
     public void shouldReturnWorkingClassWhenAgeIsBetween18And67() {
         List<Person> people = new ArrayList<>();
+        Person p0 = new Person(15);
         Person p1 = new Person(18);
         Person p2 = new Person(45);
         Person p3 = new Person(66);
         Person p4 = new Person(67);
+        Person p5 = new Person(70);
+        people.add(p0);
         people.add(p1);
         people.add(p2);
         people.add(p3);
         people.add(p4);
+        people.add(p5);
 
         PersonDiviser pd = new PersonDiviser(people);
 
@@ -59,8 +65,10 @@ public class PersonDiviserTest {
     @Test
     public void shouldReturnSeniorsWhenAgeIsAbove67() {
         List<Person> people = new ArrayList<>();
+        Person p0 = new Person(30);
         Person p1 = new Person(68);
         Person p2 = new Person(120);
+        people.add(p0);
         people.add(p1);
         people.add(p2);
 
@@ -77,41 +85,29 @@ public class PersonDiviserTest {
 
     @Test
     public void getJuniorsShouldReturnEmptyListIfGotEmptyList1() {
-        List<Person> people = new ArrayList<>();
-
-        PersonDiviser pd = new PersonDiviser(people);
-
-        List<Person> emptyList = new ArrayList<>();
+        PersonDiviser pd = new PersonDiviser(new ArrayList<>());
 
         List<Person> result = pd.getJuniors();
 
-        assertThat(result).isEqualTo(emptyList);
+        assertThat(result).isEmpty();
     }
 
     @Test
     public void getWorkingClassShouldReturnEmptyListIfGotEmptyList2() {
-        List<Person> people = new ArrayList<>();
-
-        PersonDiviser pd = new PersonDiviser(people);
-
-        List<Person> emptyList = new ArrayList<>();
+        PersonDiviser pd = new PersonDiviser(new ArrayList<>());
 
         List<Person> result = pd.getWorkingClass();
 
-        assertThat(result).isEqualTo(emptyList);
+        assertThat(result).isEmpty();
     }
 
     @Test
     public void seniorsShouldReturnEmptyListIfGotEmptyList3() {
-        List<Person> people = new ArrayList<>();
-
-        PersonDiviser pd = new PersonDiviser(people);
-
-        List<Person> emptyList = new ArrayList<>();
+        PersonDiviser pd = new PersonDiviser(new ArrayList<>());
 
         List<Person> result = pd.getSeniors();
 
-        assertThat(result).isEqualTo(emptyList);
+        assertThat(result).isEmpty();
     }
 
 }
