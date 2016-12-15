@@ -1,22 +1,18 @@
 package pl.kdkurylo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class FibonacciFinder {
-
-    List<Integer> fibonacci;
+    private static final Integer FIRST_ELEMENT = 1;
+    private static final Integer SECOND_ELEMENT = 1;
 
     public long getFibonacciNumber(int n) {
         if (n <= 0) {
             throw new IllegalArgumentException("Niepoprawna wartość: " + n);
+        } else if (n == 1) {
+            return FIRST_ELEMENT;
+        } else if (n == 2) {
+            return SECOND_ELEMENT;
         }
-        fibonacci = new ArrayList<>();
-        fibonacci.add(1);
-        fibonacci.add(1);
-        for (int i = 1; i < n; i++) {
-            fibonacci.add((fibonacci.get(i - 1)) + (fibonacci.get(i)));
-        }
-        return fibonacci.get(n - 1);
+
+        return getFibonacciNumber(n-1) + getFibonacciNumber(n-2);
     }
 }
