@@ -13,18 +13,19 @@ public class PersonDiviser implements PersonDiviserInterface {
 
     public List<Person> getJuniors() {
         List<Person> juniors = new ArrayList<>();
-        for (int i = 0; i < (people.size()); i++) {
-            if ((people.get(i)).getAge() < 18) ;
-            juniors.add(people.get(i));
+        for (Person person : people) {
+            if (person.getAge() < 18) {
+                juniors.add(person);
+            }
         }
         return juniors;
     }
 
     public List<Person> getWorkingClass() {
         List<Person> workingClass = new ArrayList<>();
-        for (int i = 0; i < (people.size()); i++) {
-            if (((people.get(i)).getAge() >= 18) && ((people.get(i)).getAge() <= 67)) {
-                workingClass.add(people.get(i));
+        for (Person person : people) {
+            if ((person.getAge() >= 18) && (person.getAge() <= 67)) {
+                workingClass.add(person);
             }
         }
         return workingClass;
@@ -32,9 +33,9 @@ public class PersonDiviser implements PersonDiviserInterface {
 
     public List<Person> getSeniors() {
         List<Person> seniors = new ArrayList<>();
-        for (int i = 0; i < people.size(); i++) {
-            if ((people.get(i)).getAge() > 67) {
-                seniors.add(people.get(i));
+        for (Person person : people) {
+            if (person.getAge() > 67) {
+                seniors.add(person);
             }
         }
         return seniors;
