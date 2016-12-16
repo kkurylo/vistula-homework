@@ -1,45 +1,32 @@
 package pl.kdkurylo;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@RunWith(JUnitParamsRunner.class)
 public class FibonacciFinderTest {
 
     @Test
-    public void shouldReturn1ForFirstFibonacciSequenceNumber() {
+    @Parameters({
+            "1, 1",
+            "2, 1",
+            "3, 2",
+            "4, 3",
+            "5, 5",
+            "6, 8",
+            "7, 13",
+            "21, 10946"
+    })
+    public void shouldReturnFibonacciSeqElement(int element, long value) {
         FibonacciFinder ff = new FibonacciFinder();
 
-        long result = ff.getFibonacciNumber(1);
+        long result = ff.getFibonacciNumber(element);
 
-        assertThat(result).isEqualTo(1);
-    }
-
-    @Test
-    public void shouldReturn1ForSecondFibonacciSequenceNumber() {
-        FibonacciFinder ff = new FibonacciFinder();
-
-        long result = ff.getFibonacciNumber(2);
-
-        assertThat(result).isEqualTo(1);
-    }
-
-    @Test
-    public void shouldReturn2ForThirdFibonacciSequenceNumber() {
-        FibonacciFinder ff = new FibonacciFinder();
-
-        long result = ff.getFibonacciNumber(3);
-
-        assertThat(result).isEqualTo(2);
-    }
-
-    @Test
-    public void shouldReturn55ForTenthFibonacciSeriesNumber() {
-        FibonacciFinder ff = new FibonacciFinder();
-
-        long result = ff.getFibonacciNumber(10);
-
-        assertThat(result).isEqualTo(55);
+        assertThat(result).isEqualTo(value);
     }
 
     @Test(expected = IllegalArgumentException.class)

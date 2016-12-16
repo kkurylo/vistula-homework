@@ -2,6 +2,7 @@ package pl.kdkurylo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PersonDiviser implements PersonDiviserInterface {
 
@@ -12,13 +13,9 @@ public class PersonDiviser implements PersonDiviserInterface {
     }
 
     public List<Person> getJuniors() {
-        List<Person> juniors = new ArrayList<>();
-        for (Person person : people) {
-            if (person.getAge() < 18) {
-                juniors.add(person);
-            }
-        }
-        return juniors;
+        return people.stream()
+                .filter(person -> person.getAge() < 18)
+                .collect(Collectors.toList());
     }
 
     public List<Person> getWorkingClass() {
